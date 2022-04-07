@@ -1,0 +1,189 @@
+<html>
+
+<head>
+    <title>Jeremy Brasil Hasiando - 06311940000082</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        const labels = [
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            '10',
+        ];
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Rating',
+                fill: false,
+                pointStyle: 'triangle',
+                pointRadius: 6,
+                backgroundColor: 'rgb(155, 90, 232)',
+                borderColor: 'rgb(155, 90, 232)',
+                data: [75,
+                    79,
+                    75,
+                    69,
+                    66,
+                    65,
+                    67,
+                    67,
+                    65,
+                    66,
+                ],
+                stack: 'combined',
+                type: 'bar'
+            }, {
+                label: 'Votes',
+                fill: false,
+                pointStyle: 'star',
+                pointRadius: 6,
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: ['375',
+                    '376',
+                    '358',
+                    '278',
+                    '275',
+                    '270',
+                    '266',
+                    '269',
+                    '266',
+                    '263',
+                ],
+                stack: 'combined',
+            }
+            ]
+        };
+
+        let delayed;
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Chart.js Stacked Line/Bar Chart'
+                    }
+                },
+                scales: {
+                    y: {
+                        stacked: true
+                    }
+                },
+                animation: {
+                    onComplete: () => {
+                        delayed = true;
+                    },
+                    delay: (context) => {
+                        let delay = 0;
+                        if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                            delay = context.dataIndex * 300 + context.datasetIndex * 100;
+                        }
+                        return delay;
+                    },
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: (ctx) => 'Tooltip point style: ' + ctx.chart.options.plugins.tooltip.usePointStyle,
+                    },
+                    tooltip: {
+                        usePointStyle: true,
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Data Rating dan Votes Pada Anime Naruto',
+                    },
+                    subtitle: {
+                        display: true,
+                        text: 'Berikut Merupakan Perbandingan Data dari Rating dan Votes Anime Naruto Selama Season 3 untuk 10 Episode Pertama',
+                        color: 'blue',
+                        font: {
+                            size: 12,
+                            family: 'tahoma',
+                            weight: 'normal',
+                            style: 'italic'
+                        },
+                        padding: {
+                            bottom: 10
+                        }
+                    }
+                },
+                responsive: true,
+                scales: {
+                    x: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Episode',
+                            color: '#911',
+                            font: {
+                                family: 'Comic Sans MS',
+                                size: 30,
+                                weight: 'bold',
+                                lineHeight: 1.2,
+                            },
+                            padding: { top: 20, left: 0, right: 0, bottom: 0 }
+                        }
+                    },
+                    y: {
+                        display: true,
+                        title: {
+                            display: true,
+                            text: 'Scale',
+                            color: '#191',
+                            font: {
+                                family: 'Times',
+                                size: 30,
+                                style: 'normal',
+                                lineHeight: 1.2
+                            },
+                            padding: { top: 30, left: 0, right: 0, bottom: 0 }
+                        }
+                    }
+                },
+            },
+        };
+
+    </script>
+
+    <script>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+
+
+</body>
+
+</html>
