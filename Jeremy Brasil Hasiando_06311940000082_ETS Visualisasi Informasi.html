@@ -5,12 +5,22 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+<h1> Nama   : Jeremy Brasil Hasiando
+<h2> NRP    : 06311940000082
+<h3> Stacked Bar/Line</h3>
+<h4> ETS Visualisasi Informasi</h4>
+</h2>
+</h1>
 
 <body>
     <div>
         <canvas id="myChart"></canvas>
     </div>
-
+    <div>
+        <br>
+        <div class="chart-container" style="position:relative; height: 30vh; width: 60vw; margin: auto;">
+            <canvas id="myChart" class="polar"></canvas>
+        </div>
     <script>
         const labels = [
             '1',
@@ -50,7 +60,7 @@
             }, {
                 label: 'Votes',
                 fill: false,
-                pointStyle: 'star',
+                pointStyle: 'triangle',
                 pointRadius: 6,
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
@@ -122,13 +132,19 @@
                     title: {
                         display: true,
                         text: 'Data Rating dan Votes Pada Anime Naruto',
+                        color: 'green',
+                        font: {
+                            size: 20,
+                            family: 'tahoma',
+                            weight: 'normal',
+                            style: 'italic',}
                     },
                     subtitle: {
                         display: true,
                         text: 'Berikut Merupakan Perbandingan Data dari Rating dan Votes Anime Naruto Selama Season 3 untuk 10 Episode Pertama',
                         color: 'blue',
                         font: {
-                            size: 12,
+                            size: 20,
                             family: 'tahoma',
                             weight: 'normal',
                             style: 'italic'
@@ -163,7 +179,7 @@
                             color: '#191',
                             font: {
                                 family: 'Times',
-                                size: 30,
+                                size: 35,
                                 style: 'normal',
                                 lineHeight: 1.2
                             },
