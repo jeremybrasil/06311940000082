@@ -96,7 +96,7 @@
                         stacked: true
                     }
                 },
-                animation: {
+                animation: { // Merupakan syntax untuk Animations Delay
                     onComplete: () => {
                         delayed = true;
                     },
@@ -119,7 +119,7 @@
                 interaction: {
                     mode: 'index',
                 },
-                plugins: {
+                plugins: { // Merupakan syntax untuk Tooltip Point Style
                     title: {
                         display: true,
                         text: (ctx) => 'Tooltip point style: ' + ctx.chart.options.plugins.tooltip.usePointStyle,
@@ -128,7 +128,7 @@
                         usePointStyle: true,
                     }
                 },
-                plugins: {
+                plugins: { // Merupakan syntax untuk Subtitle Basic pada Title
                     title: {
                         display: true,
                         text: 'Data Rating dan Votes Pada Anime Naruto',
@@ -139,7 +139,7 @@
                             weight: 'normal',
                             style: 'italic',}
                     },
-                    subtitle: {
+                    subtitle: { // Merupakan syntax untuk Subtitle Basic pada Sub Title
                         display: true,
                         text: 'Berikut Merupakan Perbandingan Data dari Rating dan Votes Anime Naruto Selama Season 3 untuk 10 Episode Pertama',
                         color: 'blue',
@@ -154,9 +154,9 @@
                         }
                     }
                 },
-                responsive: true,
+                responsive: true, 
                 scales: {
-                    x: {
+                    x: { // Merupakan syntax untuk Scale Options Title Configuration yaitu Episode yang terletak di sumbu aksis 
                         display: true,
                         title: {
                             display: true,
@@ -171,7 +171,7 @@
                             padding: { top: 20, left: 0, right: 0, bottom: 0 }
                         }
                     },
-                    y: {
+                    y: { // Merupakan syntax untuk Scale Options Title Configuration yaitu Scale antara 0-500 yang terletak di sumbu ordinat
                         display: true,
                         title: {
                             display: true,
